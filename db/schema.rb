@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510191654) do
+ActiveRecord::Schema.define(version: 20170511174647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,14 @@ ActiveRecord::Schema.define(version: 20170510191654) do
 
   create_table "translations", force: :cascade do |t|
     t.string   "original"
-    t.string   "modified"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "category_id"
+    t.string   "modified_sp"
+    t.string   "modified_fr"
+    t.string   "modified_ro"
+    t.string   "modified_it"
+    t.string   "modified_por"
   end
 
 end

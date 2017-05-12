@@ -11,18 +11,17 @@ class Api::V1::CategoriesController < ApplicationController
   # end
 
   def create
-    binding.pry
-    @category = Category.create(params[:title])
-    render json: @category, status: 201
+    # binding.pry
+    # binding.pry
+    @category = Category.create(title: params[:title])
+    render json: @category
   end
 
-  # def show
-  #   @category = Category.find(params[:id])
-  #   respond_to do |format|
-  #     format.html { render :show }
-  #     format.json { render json: @category }
-  #   end
-  # end
+  def show
+    # binding.pry
+    @category = Category.find(params[:id])
+    render json: @category
+  end
 
   # private
   #
